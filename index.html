@@ -14,17 +14,19 @@
 
 <body>
     <div class="card">
-        <p>1 Euro equals</p>
-        <h1>1.09 United States Dollar</h1>
+        <p><span>1</span> <span>Euro</span> equals</p>
+        <h1><span>1.09</span> <span>United States Dollar</span></h1>
         <form action="">
             <div class="select">
                 <div class="currency-1">
-                    <input type="text"><select class="select" name="euro" id="euro">
-                        <option value="Euro">Euro</option>
+                    <input type="number" class="currency1value" placeholder="1" onchange="getCurrency()"><select
+                        class="currency1" onchange="getCurrency()">
+                        <option value="eur">Euro</option>
                     </select>
                 </div>
                 <div class="currency-2">
-                    <input type="text"><select class="select" name="euro" id="euro">
+                    <input type="number" class="currency2value" placeholder="1.09" onchange="getCurrency()"><select
+                        class="currency2" onchange="getCurrency()">
                         <option value="usd">United States Dollar</option>
                     </select>
                 </div>
