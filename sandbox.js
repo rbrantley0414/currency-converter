@@ -88,8 +88,10 @@ function getCurrency() {
         })
         .then(() => {
             // console.log(obj);
-            // for(i = 0; i < Object.values(obj).length)
+            // console.log(Object.keys(obj));
+            // console.log(Object.values(obj));
             let output = `<option>Currencies</option>`;
+            // loop for grabbing each country name and displaying it in drop down
             Object.values(obj).forEach(val => {
                 output += `
                 <option>${val}</option>
@@ -100,9 +102,33 @@ function getCurrency() {
         .catch(error => console.log('error', error));
 }
 
+// use an onchange event
 
-// //loop for grabbing each country name and displaying it in drop down
+function convertCurrency() {
+    var myHeaders = new Headers();
+    myHeaders.append("apikey", "0D7KYS4a1T01b6u32SYYyktfF8OY0Nly");
 
-// document.get
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+        headers: myHeaders
+    };
 
-// //use an onchange event
+    var currency1
+    var currency2
+    var amount
+    var currency1value = document.querySelector(".currency1value")
+    var currency2value = document.querySelector(".currency2value")
+
+    fetch("https://api.apilayer.com/fixer/convert?to="
+        + currency1
+        + "&from="
+        + currency2
+        + "&amount="
+        + amount, requestOptions)
+        .then(response => response.json())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+}
+
+// Object.keys(obj)
