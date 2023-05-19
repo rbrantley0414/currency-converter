@@ -14,7 +14,7 @@ var symbol;
 
 function getCurrency() {
     var myHeaders = new Headers();
-    myHeaders.append("apikey", "0D7KYS4a1T01b6u32SYYyktfF8OY0Nly");
+    myHeaders.append("apikey", "");
 
     var requestOptions = {
         method: 'GET',
